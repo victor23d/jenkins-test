@@ -4,11 +4,9 @@ pipeline {
     
     environment {
 	WORKSPACE = 'hehe'
-    }
-
-    environment { 
         CC = 'clang'
     }
+
     stages {
         stage('cis-benchmark') {
             steps {
