@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('cis-benchmark') {
             steps {
-                echo 'Building..'
+		sh "echo 'asd' > 2"
             }
         }
     }
