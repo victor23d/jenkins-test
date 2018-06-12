@@ -1,21 +1,15 @@
 pipeline {
     agent any
-
-    
-
+    environment { 
+        CC = 'clang'
+    }
     stages {
-        stage('cis-benchmark') {
-    	    environment {
-	        WORKSPACE = 'hehe'
-            	CC = 'clang'
-   	    }
+        stage('Example') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
             steps {
-		echo pwd
-		echo $CC
-		echo $WORKSPACE
-		sh "pwd > 2333"
-		sh "pwd"
-		sh "ls"
+                sh 'printenv'
             }
         }
     }
