@@ -7,6 +7,7 @@ pipeline {
 		echo pwd
 		sh "pwd > 2222"
 		sh "pwd"
+		sh "ls"
             }
         }
     }
