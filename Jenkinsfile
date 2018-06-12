@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     
-    environment {
-	WORKSPACE = 'hehe'
-        CC = 'clang'
-    }
 
     stages {
         stage('cis-benchmark') {
+    	    environment {
+	        WORKSPACE = 'hehe'
+            	CC = 'clang'
+   	    }
             steps {
 		echo pwd
 		echo $CC
