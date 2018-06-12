@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('cis-benchmark') {
             steps {
-		sh "echo 'asd' > 2"
+		sh "echo 'asd'"
             }
         }
     }
