@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('cis-benchmark') {
             steps {
-		echo `pwd`
+		echo pwd
 		sh "pwd > 2222"
 		sh "pwd"
             }
