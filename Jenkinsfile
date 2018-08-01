@@ -3,7 +3,7 @@ pipeline {
     environment { 
         CC = 'clang'
     }
-    def hehe
+    def hehe = 'HEHE'
     stages {
         stage('Example') {
             environment { 
