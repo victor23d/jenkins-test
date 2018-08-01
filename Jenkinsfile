@@ -12,7 +12,7 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-		sh "echo ${HEHE}"
+		sh "echo ${hehe}"
                 sh 'printenv'
 		
             }
