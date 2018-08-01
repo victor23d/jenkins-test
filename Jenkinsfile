@@ -3,9 +3,6 @@ pipeline {
     environment { 
         CC = 'clang'
     }
-    parameters{
-        string(name: 'hehe', defaultValue: 'HEHEHEHE')
-    }
     stages {
         stage('Example') {
             environment { 
@@ -13,7 +10,6 @@ pipeline {
             }
             steps {
 		sh "echo $CC"
-                echo "${hehe}"
                 sh 'printenv'
 		
             }
