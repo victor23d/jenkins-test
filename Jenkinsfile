@@ -13,7 +13,7 @@ pipeline {
             }
             steps {
 		sh "echo $CC"
-                echo ${hehe}
+                echo "${hehe}"
                 sh 'printenv'
 		
             }
