@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Not a test'){
             steps {
-                echo `pwd`
+                echo "tttt"
                 sh jenkins/test.sh
             }
         }
