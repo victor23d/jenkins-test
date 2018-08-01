@@ -12,7 +12,8 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-		sh "echo ${hehe}"
+		sh "echo $CC"
+                echo ${hehe}
                 sh 'printenv'
 		
             }
