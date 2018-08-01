@@ -21,7 +21,6 @@ pipeline {
         stage('Not a test'){
             steps {
                 echo "tttt"
-                sh jenkins/test.sh
             }
         }
     }
