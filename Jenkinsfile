@@ -3,7 +3,6 @@ pipeline {
     environment { 
         CC = 'clang'
     }
-    def hehe = 'HEHE'
     parameters{
         string(name: 'hehe', defaultValue: 'HEHEHEHE')
     }
