@@ -18,5 +18,10 @@ pipeline {
 		
             }
         }
+        stage('Not a test'){
+            steps {
+                sh jenkins/test.sh
+            }
+        }
     }
 }
