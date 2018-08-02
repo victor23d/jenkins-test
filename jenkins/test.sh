@@ -3,4 +3,4 @@ echo 1
 echo 2
 pwd
 echo 3!
-exit 2
+exit 0
