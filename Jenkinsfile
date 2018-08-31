@@ -14,8 +14,10 @@ pipeline {
         sh 'ls'
         sh 'ls ../'
         sh 'ls ../..'
-        sh 'ls -R /root'
+        sh 'ls /root'
         sh 'env'
+        sh 'echo ${PWD}
+        sh 'uname -a'
       }
     }
   }
