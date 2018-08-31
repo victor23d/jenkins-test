@@ -6,7 +6,7 @@ pipeline {
     }
   }
   stages {
-    stage('') {
+    stage('asd') {
       steps {
         sh 'ls'
         sh 'pwd'
