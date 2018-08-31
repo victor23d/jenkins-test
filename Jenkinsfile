@@ -20,6 +20,7 @@ pipeline {
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
+        sh 'sleep 3000'
       }
     }
   }
