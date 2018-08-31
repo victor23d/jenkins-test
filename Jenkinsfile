@@ -19,7 +19,7 @@ pipeline {
         sh 'env'
         //sh 'echo ${PWD}
         sh 'uname -a'
-        echo ${PWD}
+        echo "${PWD}"
       }
     }
   }
