@@ -8,10 +8,13 @@ pipeline {
   stages {
     stage('asd') {
       steps {
-        sh 'ls'
-        sh 'pwd'
         sh 'echo ppppppwd'
         sh 'echo `pwd`'
+        sh 'pwd'
+        sh 'ls'
+        sh 'ls ../'
+        sh 'ls ../..'
+        sh 'ls -R /root'
         sh 'env'
       }
     }
