@@ -1,35 +1,19 @@
-void setBuildStatus(String message, String state) {
-  step([
-      $class: "GitHubCommitStatusSetter",
-      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/victor23d/jenkins-test"],
-      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
-      errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
-      statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
-  ]);
-}
-
-
 pipeline {
-    agent any
-    environment { 
-        CC = 'clang'
+  agent {
+    docker {
+      image 'nginx:alpine'
+      args '-v ${PWD}:/root/'
     }
-    stages {
-        stage('Example') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
-            steps {
-		sh "echo $CC"
-                sh 'printenv'
-		
-            }
-        }
-        stage('Not a test'){
-            steps {
-                echo "tttt"
-                sh 'jenkins/test.sh'
-            }
-        }
+  }
+  stages {
+    stage('') {
+      steps {
+        sh 'ls'
+        sh 'pwd'
+        sh 'echo ppppppwd'
+        sh 'echo `pwd`'
+        sh 'env'
     }
+  }
 }
+
