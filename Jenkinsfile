@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('asd') {
       steps {
+        sh 'nginx -v'
         sh 'echo ppppppwd'
         sh 'echo `pwd`'
         sh 'pwd'
