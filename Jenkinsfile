@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'nginx:alpine'
-      //args '-v ${PWD}:/root/'
+      args '-v ${PWD}:/root/'
     }
   }
   stages {
@@ -14,7 +14,6 @@ pipeline {
         sh 'pwd'
         sh 'ls'
         sh 'ls ../'
-        sh 'ls ../..'
         sh 'ls /root'
         sh 'env'
         //sh 'echo ${PWD}
