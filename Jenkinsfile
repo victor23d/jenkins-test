@@ -19,9 +19,8 @@ pipeline {
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
-        pwd
-        dir /root
-        pwd
+        dir '/root'
+        //echo pwd
 
 
         sh 'sleep 300'
