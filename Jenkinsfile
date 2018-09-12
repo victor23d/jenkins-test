@@ -20,9 +20,11 @@ pipeline {
         sh 'uname -a'
         echo "${PWD}"
 
-
         //sh 'sleep 300'
       }
+    }
+    stage('inspect') {
+        sh 'jenkins/inspect.sh'
     }
   }
 }
