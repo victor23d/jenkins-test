@@ -20,10 +20,10 @@ pipeline {
         sh 'uname -a'
         echo "${PWD}"
         dir '/root'
-        //echo pwd
+        pwd()
 
 
-        sh 'sleep 300'
+        //sh 'sleep 300'
       }
     }
   }
