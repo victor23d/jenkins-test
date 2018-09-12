@@ -21,7 +21,7 @@ pipeline {
         echo "${PWD}"
 
 
-        sh 'sleep 300'
+        //sh 'sleep 300'
       }
     }
   }
