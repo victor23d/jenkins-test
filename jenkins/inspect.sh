@@ -32,8 +32,8 @@ echo '--------------------'
 # Not available in alpine
 # echo 'ps -L u n | tr -s ' ' | cut -d ' ' -f 2,3,14-'
 # ps -L u n | tr -s ' ' | cut -d ' ' -f 2,3,14-
-echo 'ps -elf'
-ps -elf
+echo 'ps aux'
+ps aux
 echo '--------------------'
 echo '\n'
 
