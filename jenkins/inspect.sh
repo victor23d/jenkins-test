@@ -17,9 +17,9 @@ echo '--------------------'
 echo 'whoami'
 whoami
 echo '--------------------'
-echo 'whereis jenkins ; which jenkins'
-whereis jenkins
-which jenkins
+# Only useful when jenkins installed in host machine not docker
+echo 'whereis jenkins || which jenkins'
+whereis jenkins || which jenkins
 echo '--------------------'
 echo 'cut -d: -f1 /etc/passwd'
 cut -d: -f1 /etc/passwd
