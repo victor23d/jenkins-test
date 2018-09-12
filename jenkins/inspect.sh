@@ -17,8 +17,8 @@ echo '--------------------'
 echo 'whoami'
 whoami
 echo '--------------------'
-echo 'whereis jenkins || which jenkins'
-whereis jenkins || which jenkins
+echo 'whereis jenkins ; which jenkins'
+whereis jenkins ; which jenkins
 echo '--------------------'
 echo 'cut -d: -f1 /etc/passwd'
 cut -d: -f1 /etc/passwd
