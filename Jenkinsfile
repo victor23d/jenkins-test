@@ -19,7 +19,7 @@ pipeline {
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
-        dir '/root'
+        //dir '/root'
         pwd()
 
 
