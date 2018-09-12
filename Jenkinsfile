@@ -19,8 +19,12 @@ pipeline {
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
-        //sh 'sleep 300'
-        echo "${PWD}"
+        pwd
+        dir /root
+        pwd
+
+
+        sh 'sleep 300'
       }
     }
   }
