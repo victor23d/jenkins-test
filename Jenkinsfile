@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'nginx:alpine'
-      args '-v /root/cache:/cache/ -v /opt:/opt'
+      args '--user root'
     }
   }
   stages {
@@ -15,7 +15,7 @@ pipeline {
         sh 'ls'
         sh 'ls ../'
         sh 'ls /root'
-        sh 'env > /root/env'
+        sh 'env > root_file'
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
