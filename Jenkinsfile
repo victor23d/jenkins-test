@@ -24,7 +24,9 @@ pipeline {
       }
     }
     stage('inspect') {
+      steps{
         sh 'jenkins/inspect.sh'
+      }
     }
   }
 }
