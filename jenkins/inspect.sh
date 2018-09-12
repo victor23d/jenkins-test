@@ -1,10 +1,10 @@
 echo 'echo $PWD \n'
 echo $PWD
 echo 'ls $PWD/.. \n'
-echo 'ls $PWD/..
-echo 'ls /var/lib/jenkins/workspace
+ls $PWD/..
+echo 'ls /var/lib/jenkins/workspace'
 ls /var/jenkins-home/workspace
-echo 'ls -Al /var/lib/jenkins/workspace/sonar-scanner_master-4NADIYUATQ5FQOWKFXMEYNOVVICA7URC46QNTF4BXCGRYNYG7RLA
+echo 'ls -Al /var/lib/jenkins/workspace/sonar-scanner_master-4NADIYUATQ5FQOWKFXMEYNOVVICA7URC46QNTF4BXCGRYNYG7RLA'
 echo 'uname -a'
 uname -a
 echo 'whoami'
