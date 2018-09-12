@@ -1,4 +1,7 @@
+echo $PWD
+ls $PWD/..
 ls /var/lib/jenkins/workspace
+ls /var/jenkins-home/workspace
 ls -Al /var/lib/jenkins/workspace/sonar-scanner_master-4NADIYUATQ5FQOWKFXMEYNOVVICA7URC46QNTF4BXCGRYNYG7RLA
 uname -a
 whoami
