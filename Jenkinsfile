@@ -19,6 +19,7 @@ pipeline {
         //sh 'echo ${PWD}
         sh 'uname -a'
         echo "${PWD}"
+        sh "asd || true"
 
         //sh 'sleep 300'
       }
