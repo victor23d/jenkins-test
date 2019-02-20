@@ -1,10 +1,11 @@
 pipeline {
-  agent {
-    docker {
-      image 'nginx:alpine'
-      args '--user root'
-    }
-  }
+  //agent {
+  //  docker {
+  //    image 'nginx:alpine'
+  //    args '--user root'
+  //  }
+  //}
+  agent any
   stages {
      stage('Release-test') {
             when { tag "rc-*" }
