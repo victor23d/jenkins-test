@@ -1,45 +1,28 @@
 pipeline {
-  //agent {
-  //  docker {
-  //    image 'nginx:alpine'
-  //    args '--user root'
-  //  }
-  //}
-  agent any
-  stages {
-     stage('Release-test') {
-            when { tag "rc-*" }
-            steps {
-                echo 'Deploy to staging'
+    agent any
+    environment { 
+        CC = 'clang'
+    }
+    parameters{
+        string(name: 'hehe', defaultValue: 'HEHEHEHE')
+    }
+    stages {
+        stage('Example') {
+            environment { 
+                DEBUG_FLAGS = '-g'
             }
-            when { tag "v-*" }
             steps {
-                echo 'Deploy to product'
+		sh "echo $CC"
+                echo "${hehe}"
+                sh 'printenv'
+		
             }
         }
-    stage('asd') {
-      steps {
-        sh 'nginx -v'
-        sh 'echo ppppppwd'
-        sh 'echo `pwd`'
-        sh 'pwd'
-        sh 'ls'
-        sh 'ls ../'
-        sh 'ls /root'
-        sh 'env > root_file'
-        //sh 'echo ${PWD}
-        sh 'uname -a'
-        echo "${PWD}"
-        sh "asd || true"
-
-        //sh 'sleep 300'
-      }
+        stage('Not a test'){
+            steps {
+                echo "tttt"
+                sh 'jenkins/test.sh'
+            }
+        }
     }
-    stage('inspect') {
-      steps{
-        sh 'jenkins/inspect.sh'
-      }
-    }
-  }
 }
-
