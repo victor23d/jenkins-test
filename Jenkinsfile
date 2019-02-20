@@ -6,6 +6,16 @@ pipeline {
     }
   }
   stages {
+     stage('Release-test') {
+            when { tag "rc-*" }
+            steps {
+                echo 'Deploy to staging'
+            }
+            when { tag "v-*" }
+            steps {
+                echo 'Deploy to product'
+            }
+        }
     stage('asd') {
       steps {
         sh 'nginx -v'
