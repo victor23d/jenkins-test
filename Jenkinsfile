@@ -25,6 +25,10 @@ pipeline {
                 sh "echo ${env.DEBUG_FLAGS}"
                 echo "${hehe}"
                 echo "${K8S_CONFIG}"
+
+                build job: 'deploy-center', parameters: [string(name: 'hehe', value: 'triggered'), string(name: 'K8S_CONFIG', value: 'prod')], quietPeriod: 0
+
+
                 sh "env"
 
             }
