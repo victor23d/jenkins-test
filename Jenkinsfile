@@ -6,15 +6,24 @@ pipeline {
                 sh 'echo test'
             }
         }
-        //stage('DeployTest') {
-        //    when { tag "rc-*" }
-        //    steps {
-        //        echo 'Deploying tag release'
-        //    }
-        //    when { tag "v-*" }
-        //    steps {
-        //        echo 'Deploying tag v'
-        //    }
-        //}
+        environment { 
+            CC = 'clang'
+        }
+        parameters{
+            string(name: 'hehe', defaultValue: 'HEHEHEHE')
+        }
+        stages {
+            stage('Example') {
+                environment { 
+                    DEBUG_FLAGS = '-g'
+                }
+                steps {
+                    sh "echo ${env.CC}"
+                    echo "${hehe}"
+                    sh "env"
+
+                }
+            }
+        }
     }
 }
