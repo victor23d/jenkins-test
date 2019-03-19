@@ -9,9 +9,9 @@ pipeline {
                 sh 'echo test'
             }
         }
-        environment { 
-            CC = 'clang'
-        }
+        /* environment { */ 
+        /*     CC = 'clang' */
+        /* } */
         stage('Example') {
             environment { 
                 DEBUG_FLAGS = '-g'
