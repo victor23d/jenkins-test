@@ -22,6 +22,9 @@ pipeline {
         }
         stage("Checkout"){
             steps {
+                sh "pwd"
+                sh "ls"
+                sh "ls .."
                 git branch: "${BRANCH}",
                 credentialsId: "ssh",
                 url: "git@github.com:${ORGANIZATION}/${GIT_REPO}"
@@ -34,6 +37,9 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
+                sh "pwd"
+                sh "ls"
+                sh "ls .."
                 sh "echo ${CC}"
                 sh "echo ${env.DEBUG_FLAGS}"
                 echo "${hehe}"
