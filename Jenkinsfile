@@ -6,7 +6,7 @@ pipeline {
         choice(name: "K8S_CONFIG",
         choices: ["dev", "qa", "stage", "prod"],
         description: "Kubernetes apply configuration from")
-        
+
     }
     environment { 
         CC = 'clang'
@@ -23,13 +23,13 @@ pipeline {
         stage("Checkout"){
             steps {
                 git branch: "${BRANCH}",
-                credentialsId: "github-mb-token",
-                url: "https://github.com:${ORGANIZATION}/${GIT_REPO}"
+                credentialsId: "ssh",
+                url: "git@github.com:${ORGANIZATION}/${GIT_REPO}"
 
                 sh "git checkout ${COMMIT}"
                 sh "find . -maxdepth 2"
-
             }
+        }
         stage('Example') {
             environment { 
                 DEBUG_FLAGS = '-g'
