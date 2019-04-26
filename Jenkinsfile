@@ -26,7 +26,6 @@ pipeline {
                 credentialsId: "ssh",
                 url: "git@github.com:${ORGANIZATION}/${GIT_REPO}"
 
-                sh "git checkout ${COMMIT}"
                 sh "find . -maxdepth 2"
             }
         }
