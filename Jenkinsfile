@@ -6,11 +6,18 @@ pipeline {
     //  }
     //}
     agent any
+    environment { 
+        CC = 'clang'
+        GIT_REPO = "exec-server"
+    }
     stages {
         stage('docker'){
             steps{
+                sh ' echo ${GIT_REPO}'
                 sh 'docker run -dit --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine ash -c "./scripts/exit0.sh"'
                 sh 'docker run -dit --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine ash -c "./scripts/exit2.sh"'
+                sh 'docker run -dit --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine "./scripts/exit2.sh"'
+                sh 'docker run -it --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine "./scripts/exit2.sh"'
             }
         }
         stage('asd') {
