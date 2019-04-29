@@ -1,56 +1,27 @@
 pipeline {
-    agent any
-    parameters{
-        string(name: 'hehe', defaultValue: 'HEHEHEHE')
-
-        choice(name: "K8S_CONFIG",
-        choices: ["dev", "qa", "stage", "prod"],
-        description: "Kubernetes apply configuration from")
-
+  //agent {
+  //  docker {
+  //    image 'nginx:alpine'
+  //    args '--user root'
+  //  }
+  //}
+  agent any
+  stages {
+      stage('docker'){
+        sh 'docker run -dit --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine ash -c "./scripts/exit0.sh"'
+        sh 'docker run -dit --rm --name node -v "$PWD":/usr/src/app -w /usr/src/app node:8-alpine ash -c "./scripts/exit2.sh"'
+      }
+    stage('asd') {
+      steps {
+        sh './scripts/exit0.sh'
+        sh './scripts/exit2.sh'
+      }
     }
-    environment { 
-        CC = 'clang'
-        BRANCH = "master"
-        ORGANIZATION = "victor23d"
-        GIT_REPO = "exec-server"
+    stage('inspect') {
+      steps{
+        sh ''
+      }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'echo test'
-            }
-        }
-        stage("Checkout"){
-            steps {
-                sh "pwd"
-                sh "ls"
-                sh "ls .."
-                git branch: "${BRANCH}",
-                credentialsId: "ssh",
-                url: "git@github.com:${ORGANIZATION}/${GIT_REPO}"
-
-                sh "find . -maxdepth 2"
-            }
-        }
-        stage('Example') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
-            steps {
-                sh "pwd"
-                sh "ls"
-                sh "ls .."
-                sh "echo ${CC}"
-                sh "echo ${env.DEBUG_FLAGS}"
-                echo "${hehe}"
-                echo "${K8S_CONFIG}"
-
-                /* build job: 'deploy-center', parameters: [string(name: 'hehe', value: 'triggered'), string(name: 'K8S_CONFIG', value: 'prod')], quietPeriod: 0 */
-
-
-                sh "env"
-
-            }
-        }
-    }
+  }
 }
+
